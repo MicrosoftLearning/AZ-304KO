@@ -1,6 +1,6 @@
 ﻿# AZ-304: Microsoft Azure Architect Design
 
-- **[HTML 형식으로 랩에 링크](https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/)**
+- **[HTML 형식으로 랩에 링크](https://microsoftlearning.github.io/AZ-304KO-Microsoft-Azure-Architect-Design/)**
 - **[최신 학생용 핸드북 및 AllFiles 콘텐츠 다운로드](https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design/archive/master.zip)**
 - **MCT입니까?** - [MCT용 GitHub 사용자 가이드](https://microsoftlearning.github.io/MCT-User-Guide-KO/)를 검토하십시오.
 - **랩 명령을 수동으로 빌드해야 합니까?** - [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) 리포지토리에서 명령을 사용할 수 있습니다.

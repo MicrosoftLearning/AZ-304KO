@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     title: '4: Azure AD 인증 및 권한 부여 관리'
     module: '모듈 4: 인증 및 권한 부여 디자인'
@@ -88,7 +88,7 @@ Windows 서버 관리자 자격 증명
 
 1. Azure Portal의 Cloud Shell 창의 도구 모음에서 **파일 업로드/다운로드** 아이콘을 선택하고 드롭다운 메뉴에서 **업로드**를 선택하고 파일(**\\\AZ303\\AllFiles\AllFiles\10\\azureDeploy30310suba.json**)을 Cloud Shell 홈 디렉터리에 업로드합니다.
 
-1. Cloud Shell 창에서 다음 명령을 실행하여 리소스 그룹을 만듭니다. 여기서 '<Azure region>' 자리 표시자는 이전 작업에서 지정한 Azure 지역의 이름으로 바꿉니다.
+1. Cloud Shell 창에서 다음 명령을 실행하여 리소스 그룹을 만듭니다. 여기서 `<Azure region>` 자리 표시자는 이전 작업에서 지정한 Azure 지역의 이름으로 바꿉니다.
 
    ```powershell
    $location = '<Azure region>'
