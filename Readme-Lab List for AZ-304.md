@@ -1,5 +1,5 @@
 ﻿
-#AZ-304: GitHub의 랩 파일 이름 
+# AZ-304: GitHub의 랩 파일 이름 
  
 **소스 리포지토리: [https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design/](https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design/)**
 

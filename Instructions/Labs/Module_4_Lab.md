@@ -159,7 +159,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 2: Azure AD 사용자 생성 및 구성
 
-1. **Adatum Lab | 관리** 섹션의 Azure Active Directory 블레이드 **개요**에서 **사용자**에서 **사용자**를 택합니다.** | 모든 사용자** 블레이드에서 사용자 계정을 선택하여 **프로필** 설정을 표시합니다. 
+1. **Adatum Lab | 관리** 섹션의 Azure Active Directory 블레이드 **개요**에서 **사용자**에서 **사용자**를 택합니다.**| 모든 사용자** 블레이드에서 사용자 계정을 선택하여 **프로필** 설정을 표시합니다. 
 
 1. 사용자 계정의 프로필 블레이드의 **설정** 섹션에서 **편집**을 선택하고 **사용 위치**를 **미국**으로 설정하고 변경 사항을 저장합니다.
 
@@ -237,7 +237,7 @@ Windows 서버 관리자 자격 증명
 
 1. **adatum.com** 블레이드에서 Azure AD 도메인 이름 확인을 수행하는 데 필요한 정보를 검토하고 블레이드를 닫습니다.
 
-    > **참고**: **adatum.com** DNS 도메인 이름이 없으므로 유효성 검사 프로세스를 완료할 수 없습니다. 따라서 **adatum.com** Active Directory 도메인을 Azure AD 테넌트와 동기화할 수 *없습니다*. 이를 위해 이 작업의 앞에서 식별한 Azure AD 테넌트의 기본 DNS 이름**(onmicrosoft.com** 접미사로 끝나는 이름)을 사용합니다. 그러나 결과적으로 Active Directory 도메인의 DNS 도메인 이름과 Azure AD 테넌트의 DNS 이름이 다를 수 있다는 점을 기억해 두세요. 이 경우, Adatum 사용자는 Active Directory 도메인에 로그인할 때와 Azure AD 테넌트에 로그인할 때 각기 다른 이름을 사용해야 합니다.
+    > **참고**: **adatum.com** DNS 도메인 이름이 없으므로 유효성 검사 프로세스를 완료할 수 없습니다. 따라서 **adatum.com** Active Directory 도메인을 Azure AD 테넌트와 동기화할 수 *없습니다*. 이를 위해 이 작업의 앞에서 식별한 Azure AD 테넌트의 기본 DNS 이름(**onmicrosoft.com** 접미사로 끝나는 이름)을 사용합니다. 그러나 결과적으로 Active Directory 도메인의 DNS 도메인 이름과 Azure AD 테넌트의 DNS 이름이 다를 수 있다는 점을 기억해 두세요. 이 경우, Adatum 사용자는 Active Directory 도메인에 로그인할 때와 Azure AD 테넌트에 로그인할 때 각기 다른 이름을 사용해야 합니다.
 
 
 #### 작업 2: Azure VM에서 AD DS 구성
@@ -246,7 +246,7 @@ Windows 서버 관리자 자격 증명
 
 1. Azure Portal에서 **가상 머신**을 검색 및 선택하고 **가상 머신** 블레이드에서 **az30310a-vm1**을 선택합니다.
 
-1. **az30310a-vm1** 블레이드의 드롭다운 메뉴에서 **연결**을 선택하고 **az30310a-vm1**의 **RDP** 탭에서 **RDP**를 선택합니다.** | IP 주소** 드롭다운 목록의 **연결** 블레이드에서 **부하 분산 장치 공용 IP 주소** 항목을 선택한 다음 **RDP 파일 다운로드**를 선택합니다.
+1. **az30310a-vm1** 블레이드의 드롭다운 메뉴에서 **연결**을 선택하고 **az30310a-vm1**의 **RDP** 탭에서 **RDP**를 선택합니다.**| IP 주소** 드롭다운 목록의 **연결** 블레이드에서 **부하 분산 장치 공용 IP 주소** 항목을 선택한 다음 **RDP 파일 다운로드**를 선택합니다.
 
 1. 메시지가 표시되면 다음 자격 증명으로 로그인합니다.
 
@@ -259,7 +259,7 @@ Windows 서버 관리자 자격 증명
 
 1. 서버 관리자 창의 **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 **도구**를 선택하고 드롭다운 메뉴에서 **Active Directory Administrative Center**를 선택합니다.
 
-1. **Active Directory Administrative Center**에서 **adatum(로컬)**을 선택하고 **작업** 창에서 **새로 만들기**를 선택한 후 계단식 메뉴에서 **조직 구성 단위**를 선택합니다.
+1. **Active Directory Administrative Center**에서 **adatum(로컬)** 을 선택하고 **작업** 창에서 **새로 만들기**를 선택한 후 계단식 메뉴에서 **조직 구성 단위**를 선택합니다.
 
 1. **조직 구성 단위 만들기** 창의 **이름** 텍스트 상자에 **ToSync**를 입력하고 **확인**을 선택합니다.
 
@@ -352,7 +352,7 @@ Windows 서버 관리자 자격 증명
 
 1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서, **Windows PowerShell**을 시작합니다.
 
-1. **관리자**로부터:** Windows PowerShell** 콘솔은 다음을 실행하여 Azure AD Connect 델타 동기화를 시작합니다:
+1. **관리자**로부터: **Windows PowerShell** 콘솔은 다음을 실행하여 Azure AD Connect 델타 동기화를 시작합니다:
 
    ```powershell
    Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
@@ -390,7 +390,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 1: Azure AD 보안 기본값을 사용하지 않도록 설정.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내, Azure Portal을 표시하는 Internet Explorer 창에서 **Adatum Lab | **Adatum Lab Azure AD 테넌트의 **개요** 블레이드로 이동합니다.
+1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내, Azure Portal을 표시하는 Internet Explorer 창에서 **Adatum Lab |** Adatum Lab Azure AD 테넌트의 **개요** 블레이드로 이동합니다.
 
 1. **Adatum 랩 | 개요** 블레이드의 **관리** 섹션에서 **속성**을 선택합니다.
 
