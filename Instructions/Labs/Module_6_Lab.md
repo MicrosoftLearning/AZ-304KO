@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '6: Azure SQL Database 기반 애플리케이션 구현'
     module: '모듈 6: 데이터베이스에 대한 솔루션 설계'
