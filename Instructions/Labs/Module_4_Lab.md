@@ -86,7 +86,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 2: Azure Resource Manager 빠른 시작 템플릿을 사용하여 AD DS 도메인 컨트롤러를 호스트하는 Azure VM 배포
 
-1. Azure Portal의 Cloud Shell 창의 도구 모음에서 **파일 업로드/다운로드** 아이콘을 선택하고 드롭다운 메뉴에서 **업로드**를 선택하고 파일(**\\\AZ303\\AllFiles\AllFiles\10\\azureDeploy30310suba.json**)을 Cloud Shell 홈 디렉터리에 업로드합니다.
+1. Azure Portal의 Cloud Shell 창의 도구 모음에서 **파일 업로드/다운로드** 아이콘을 선택하고 드롭다운 메뉴에서 **업로드**를 선택하고 파일**\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310suba.json**을 Cloud Shell 홈 디렉터리에 업로드합니다.
 
 1. Cloud Shell 창에서 다음 명령을 실행하여 리소스 그룹을 만듭니다. 여기서 `<Azure region>` 자리 표시자는 이전 작업에서 지정한 Azure 지역의 이름으로 바꿉니다.
 
@@ -104,21 +104,21 @@ Windows 서버 관리자 자격 증명
 
 1. 랩 컴퓨터에서 다른 브라우저 탭을 열고 [https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain)로 이동합니다. 
 
-1. **새 Windows VM 만들기에서 새 AD 포리스트, 도메인 및 DC 만들기** 페이지에서  **Azure에 배포**를 선택합니다. 이렇게 하면 Azure Portal의 **새 AD 포리스트로 Azure VM 만들기** 블레이드로 브라우저가 자동으로 리디렉션됩니다.
+1. **Create a new Windows VM and create a new AD Forest, Domain and DC** 페이지에서  **Deploy to Azure**를 선택합니다. 이렇게 하면 Azure Portal의 **Create an Azure VM with a new AD Forest** 블레이드로 브라우저가 자동으로 리디렉션됩니다.
 
-1. **새 AD 포리스트로 Azure VM 만들기** 블레이드에서 **매개 변수 편집**을 선택합니다.
+1. **Create an Azure VM with a new AD Forest** 블레이드에서 **Edit parameters**을 선택합니다.
 
-1. **매개 변수 편집** 블레이드에서 **열기** 대화 상자에서 **파일 로드**를 선택하고 **\\\AZ303\\AllFiles\10\azuredeploy30310rga.json**을 선택하고 **열기** 를 선택한 다음 **저장**을 선택합니다. 
+1. **매개 변수 편집** 블레이드에서 **파일 로드**를 선택하고 **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310rga.parameters.json**을 선택하고 **열기** 를 선택한 다음 **저장**을 선택합니다. 
 
-1. **새 AD 포리스트를 사용하여 Azure VM 만들기** 블레이드에서 다음 설정을 지정합니다(기존 값은 유지).
+1. **Create an Azure VM with a new AD Forest** 블레이드에서 다음 설정을 지정합니다(기존 값은 유지).
 
     | 설정 | 값 | 
     | --- | --- |
     | 구독 | 이 랩에서 사용 중인 Azure 구독의 이름 |
     | 리소스 그룹 | **az30310a-LabRG** |
-    | DNS 접두사 | 이전 작업에서 만든 DNS 호스트 이름| 
+    | DNS 접두사 | 이전 작업에서 확인한 DNS 호스트 이름| 
 
-1. **새 AD 포리스트로 Azure VM 만들기** 블레이드에서 **위의 이용 약관에 동의합니다** 확인란을 선택하고 **구매**를 선택합니다.
+1. **Create an Azure VM with a new AD Forest** 블레이드에서 **검토+만들기** 확인란을 선택하고 다음 화면에서 **만들기**를 선택합니다.
 
     > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습을 진행하세요. 배포에는 약 15분이 소요될 수 있습니다. 이 랩의 세 번째 연습에서이 작업에 배포된 가상 머신을 사용합니다.
 
@@ -154,18 +154,18 @@ Windows 서버 관리자 자격 증명
 
 1. Azure Potal을 표시하는 브라우저 페이지를 새로 고치고 **Azure Active Directory**를 검색 및 선택하고 Azure Active Directory 블레이드에서 **테넌트 전환**을 선택합니다.
 
-1. **디렉터리 + 구독** 블레이드에서 **Adatum Lab**을 선택합니다. 
+1. **테넌트 전환(미리보기)** 블레이드에서 **Adatum Lab**을 선택합니다. 
 
 
 #### 작업 2: Azure AD 사용자 생성 및 구성
 
-1. **Adatum Lab | 관리** 섹션의 Azure Active Directory 블레이드 **개요**에서 **사용자**에서 **사용자**를 택합니다.**| 모든 사용자** 블레이드에서 사용자 계정을 선택하여 **프로필** 설정을 표시합니다. 
+1. **Adatum Lab | 개요** 섹션의 Azure Active Directory 블레이드 **관리**아래 **사용자**선택합니다. **사용자 | 모든 사용자** 블레이드에서 로그인한 사용자 계정을 선택하여 **프로필** 설정을 표시합니다. 
 
-1. 사용자 계정의 프로필 블레이드의 **설정** 섹션에서 **편집**을 선택하고 **사용 위치**를 **미국**으로 설정하고 변경 사항을 저장합니다.
+1. 사용자 계정의 프로필 블레이드의 **설정** 섹션에서 상단 메뉴에서 **편집**을 선택하고 **사용량 위치**를 **United States**으로 설정하고 변경 사항을 저장합니다.
 
     >**참고**: 이것은 이 랩의 후반부에서 사용자 계정에 Azure AD Premium P2 라이선스를 할당하려면 필요합니다.
 
-1. **사용자- 모든 사용자** 블레이드로 다시 이동한 다음 **+ 새 사용자**를 선택합니다.
+1. **사용자|모든 사용자(미리 보기)** 블레이드로 다시 이동한 다음, 상단 메뉴에서 **+ 새 사용자**를 선택합니다.
 
 1. **새 사용자** 블레이드에서 다음 설정을 지정합니다(다른 설정을 기본값으로 남겨둡니다).
 
@@ -173,16 +173,16 @@ Windows 서버 관리자 자격 증명
     | --- | --- |
     | 사용자 이름 | **az30310-aaduser1** |
     | 이름 | **az30310-aaduser1** |
-    | 암호 자동 생성 | 사용 설정됨 |
-    | 암호 표시 | 사용 설정됨 |
-    | 역할 | **전역 관리자** |
+    | 암호 자동 생성 | 선택 |
+    | 암호 표시 | 체크 |
+    | 역할 | **전역 관리자('전역 관리자'로 검색해서 선택)** |
     | 사용 위치 | **미국** |
 
     >**참고**: 전체 사용자 이름(도메인 이름 포함)과 자동 생성된 암호를 기록합니다. 이 작업의 후반에서 필요할 것입니다.
 
 1. **새 사용자** 블레이드에서 **만들기**를 선택합니다.
 
-1. 랩 컴퓨터에서는 **InPrivate** 브라우저 창을 열고 새로 만든 **az30310-aaduser1** 사용자 계정을 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다. 암호를 업데이트하라는 메시지가 표시되면 암호를 **Pa55w.rd1234**로 변경합니다. 
+1. 랩 컴퓨터에서는 Microsoft 엣지브라우저의 **InPrivate** 브라우저 창을 열고 새로 만든 **az30310-aaduser1(앞서생성한 테넌트 조합. 예:'az30310-aaduser1@hahaysh.onmicrosoft.com')** 사용자 계정을 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다. 암호를 업데이트하라는 메시지가 표시되면 암호를 **Pa55w.rd1234**로 변경합니다. 
 
 1. Azure Portal에서 **az30310-aaduser1** 사용자로 로그아웃하고 InPrivate 브라우저 창을 닫습니다.
 
@@ -191,17 +191,17 @@ Windows 서버 관리자 자격 증명
 
 1. Azure Portal을 표시하는 브라우저 창으로 돌아가 **Adatum Lab** Azure AD 테넌트의 **개요** 블레이드로 이동한 다음 **관리** 섹션에서 **라이선스**를 선택합니다.
 
-1. **라이선스 | 개요** 블레이드에서 **모든 제품**을 선택하고 **+ 시도/구매**를 선택합니다
+1. **라이선스 | 개요** 블레이드에서 **모든 제품**을 선택하고 **+ 사용/구매**를 선택합니다
 
-1. **정품 인증** 블레이드의 **Azure AD Premium P2** 섹션에서 **무료 평가판**을 선택한 다음 **정품 인증**을 선택합니다. 
+1. **정품 인증** 블레이드의 **Azure AD Premium P2** 섹션에서 **무료 평가판**을 선택한 다음 **활성화**를 선택합니다. 
 
 1. **라이선스 | 모든 제품** 블레이드를 표시하는 브라우저 창을 새로 고치고 정품 인증이 성공했는지 확인합니다. 
 
-1. **라이선스 - 모든 제품** 블레이드에서 **Azure Active Directory Premium P2** 항목을 선택합니다. 
+1. **라이선스 | 모든 제품** 블레이드에서 **Azure Active Directory Premium P2** 항목을 선택합니다. 
 
-1. **Azure Active Directory Premium P2 | 라이센스 사용자** 블레이드에서 **+ 할당**을 선택합니다. 
+1. **Azure Active Directory Premium P2 | 허가된 사용자** 블레이드에서 **+ 할당**을 선택합니다. 
 
-1. **라이선스 할당** 블레이드에서 **사용자**를 선택하고 **사용자** 블레이드에서 계정과 **az30310-aaduser1** 사용자 계정을 모두 선택합니다.
+1. **라이선스 할당** 블레이드에서 **사용자**를 선택하고 **사용자** 블레이드에서 로그인한 계정과 **az30310-aaduser1** 사용자 계정을 모두 선택합니다.
 
 1. **라이선스 할당** 블레이드로 돌아가서 **할당 옵션**을 선택하고 **라이선스 옵션** 블레이드에 나열된 옵션을 검토한 후 **확인**을 선택합니다.
 
@@ -223,59 +223,61 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 1: Azure AD 테넌트에 사용자 지정 도메인 이름 할당
 
-1. Azure Portal에서 **Adatum 랩 | 개요** 블레이드로 이동합니다.
+1. Azure Portal에서 **Adatum Lab | 개요** 블레이드로 이동합니다.
 
-1. **Adatum 랩 | 개요** 블레이드에서 **사용자 지정 도메인 이름**을 선택합니다.
+1. **Adatum Lab | 개요** 블레이드에서 **사용자 지정 도메인 이름**을 선택합니다.
 
-1. **Adatum 랩 | 사용자 지정 도메인 이름** 블레이드에서 Azure AD 테넌트와 연결된 기본 DNS 도메인 이름을 식별합니다. 
+1. **Adatum Lab | 사용자 지정 도메인 이름** 블레이드에서 Azure AD 테넌트와 연결된 기본 DNS 도메인 이름을 식별합니다. 
 
     >**참고**: Azure AD 테넌트의 기본 DNS 이름 값을 기록합니다. 이 값은 다음 작업에 필요합니다.
 
-1. **Adatum 랩 | 사용자 지정 도메인 이름** 블레이드에서 **+ 사용자 지정 도메인 추가**를 선택합니다.
+1. **Adatum Lab | 사용자 지정 도메인 이름** 블레이드에서 **+ 사용자 지정 도메인 추가**를 선택합니다.
 
 1. **사용자 지정 도메인 이름** 블레이드의 **사용자 지정 도메인 이름** 텍스트 상자에 **adatum.com**을 입력하고 **도메인 추가**를 선택합니다. 
 
 1. **adatum.com** 블레이드에서 Azure AD 도메인 이름 확인을 수행하는 데 필요한 정보를 검토하고 블레이드를 닫습니다.
 
-    > **참고**: **adatum.com** DNS 도메인 이름이 없으므로 유효성 검사 프로세스를 완료할 수 없습니다. 따라서 **adatum.com** Active Directory 도메인을 Azure AD 테넌트와 동기화할 수 *없습니다*. 이를 위해 이 작업의 앞에서 식별한 Azure AD 테넌트의 기본 DNS 이름(**onmicrosoft.com** 접미사로 끝나는 이름)을 사용합니다. 그러나 결과적으로 Active Directory 도메인의 DNS 도메인 이름과 Azure AD 테넌트의 DNS 이름이 다를 수 있다는 점을 기억해 두세요. 이 경우, Adatum 사용자는 Active Directory 도메인에 로그인할 때와 Azure AD 테넌트에 로그인할 때 각기 다른 이름을 사용해야 합니다.
+    > **참고**: **adatum.com** DNS 도메인 이름이 없으므로 유효성 검사 프로세스를 완료할 수 없습니다. 따라서 **adatum.com** Active Directory 도메인을 Azure AD 테넌트와 동기화할 수 *없습니다*. 이를 위해 이 작업의 앞에서 식별한 Azure AD 테넌트의 기본 DNS 이름(**onmicrosoft.com** 접미사로 끝나는 이름 예:hahaysh.onmicrosoft.com)을 사용합니다. 그러나 결과적으로 Active Directory 도메인의 DNS 도메인 이름과 Azure AD 테넌트의 DNS 이름이 다를 수 있다는 점을 기억해 두세요. 이 경우, Adatum 사용자는 Active Directory 도메인에 로그인할 때와 Azure AD 테넌트에 로그인할 때 각기 다른 이름을 사용해야 합니다.
 
 
 #### 작업 2: Azure VM에서 AD DS 구성
 
 > **참고**: 이 연습을 시작하기 전에 랩 시작 시 했었던 Azure VM의 배포가 완료되었는지 확인합니다.
 
-1. Azure Portal에서 **가상 머신**을 검색 및 선택하고 **가상 머신** 블레이드에서 **az30310a-vm1**을 선택합니다.
+1. Azure Portal에서 오른쪽 위 **"사용자 계정"**을 선택하고 **디렉토리 전환** 블레이드에서 앞서 Azure VM을 배포했던 디렉토리를 선택합니다.
 
-1. **az30310a-vm1** 블레이드의 드롭다운 메뉴에서 **연결**을 선택하고 **az30310a-vm1**의 **RDP** 탭에서 **RDP**를 선택합니다.**| IP 주소** 드롭다운 목록의 **연결** 블레이드에서 **부하 분산 장치 공용 IP 주소** 항목을 선택한 다음 **RDP 파일 다운로드**를 선택합니다.
+1. Azure Portal **리소스 그룹** 메뉴 를 선택하고  **az30310a-labRG**을 선택, **가상 머신** **az30310a-vm1**을 선택합니다.
+
+1. **az30310a-vm1** 블레이드의 드롭다운 메뉴에서 **연결**을 선택하고 **az30310a-vm1**의 **RDP** 탭에서 **RDP**를 선택합니다.**| IP 주소** 드롭다운 목록에서 **부하 분산 장치 공용 IP 주소** 항목을 선택한 다음 **RDP 파일 다운로드**를 선택/실행 합니다.
 
 1. 메시지가 표시되면 다음 자격 증명으로 로그인합니다.
 
     | 설정 | 값 | 
     | --- | --- |
-    | 사용자 이름 | **학생** |
+    | 사용자 이름 | **Student** |
     | 암호 | **Pa55w.rd1234** |
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 내 서버 관리자 창에서 **로컬 서버**를 선택하고 **IE 강화된 보안 구성** 레이블 옆에 있는 **켜기** 링크를 선택한 다음, **IE 강화된 보안 구성** 대화 상자에서 둘 다 **끄기** 옵션을 선택합니다.
+1. **az30310a-vm1**에 대한 원격 데스크톱 내 Server Manager 창에서 왼쪽에 항목 중 **Local Server**를 선택하고 **IE Enhanced Security Configuration** 레이블 옆에 있는 **On** 링크를 선택한 다음, **IE Enhanced Security Configuration** 대화 상자에서 둘 다 **Off** 옵션을 선택합니다.
 
-1. 서버 관리자 창의 **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 **도구**를 선택하고 드롭다운 메뉴에서 **Active Directory Administrative Center**를 선택합니다.
+1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 Server Manager창 오른쪽 위쪽에 메뉴 **Tools**를 선택하고 드롭다운 메뉴에서 **Active Directory Administrative Center**를 선택합니다.
 
-1. **Active Directory Administrative Center**에서 **adatum(로컬)** 을 선택하고 **작업** 창에서 **새로 만들기**를 선택한 후 계단식 메뉴에서 **조직 구성 단위**를 선택합니다.
+1. **Active Directory Administrative Center**에서 **adatum(로컬)** 을 선택하고 오른쪽 레이어에 **Tasks** 창에서 **New**를 선택한 후 계단식 메뉴에서 **Organization Unit**를 선택합니다.
 
-1. **조직 구성 단위 만들기** 창의 **이름** 텍스트 상자에 **ToSync**를 입력하고 **확인**을 선택합니다.
+1. **Create Organization Unit** 창의 **Name** 텍스트 상자에 **ToSync**를 입력하고 **OK**을 선택합니다.
 
-1. 새로 만든 **ToSync** 조직 구성 단위를 두 번 클릭하여 해당 콘텐츠가 Active Directory Administrative Center 콘솔의 세부 정보 창에 표시도록 합니다. 
+1. 새로 만든 **ToSync** Organization Unit 를 두 번 클릭하여 해당 콘텐츠가 Active Directory Administrative Center 콘솔의 세부 정보 창에 표시도록 합니다. 
 
-1. **작업** 창의 **ToSync** 섹션 내에서 **새로 만들기**를 선택하고 계단식 메뉴에서 **사용자**를 선택합니다.
+1. **Tasks** 창의 **ToSync** 섹션 내에서 **New**를 선택하고 계단식 메뉴에서 **User**를 선택합니다.
 
-1. **사용자 만들기** 창에서 다음 설정이 있는 새 사용자 계정을 만들고(다른 설정 값은 그대로 유지한 채) **확인**을 선택합니다.
+1. **Create User** 창에서 다음 설정이 있는 새 사용자 계정을 만들고(다른 설정 값은 그대로 유지한 채) **OK**을 선택합니다.
 
     | 설정 | 값 | 
     | --- | --- |
-    | 전체 이름 | **aduser1** |
-    | 사용자 UPN 로그온 | **aduser1** |
-    | 사용자 SamAccountName 로그온 | **aduser1** |
-    | 암호 | **Pa55w.rd1234** | 
-    | 기타 암호 옵션 | **암호가 만료되지 않습니다.** |
+    | Full Name | **aduser1** |
+    | User UPN logon | **aduser1** |
+    | User SamAccountName logon | **aduser1** |
+    | Password | **Pa55w.rd1234** | 
+    | Other password options | **Password never expires** |
 
 
 #### 작업 3: Azure AD Connect 설치
@@ -284,61 +286,61 @@ Windows 서버 관리자 자격 증명
 
 1. Azure Portal에서 **Azure Active Directory**를 검색하여 선택하고 **Adatum Lab | 개요** 블레이드에서 **Azure AD Connect**를 선택합니다.
 
-1. **Adatum 랩 | Azure AD Connect** 블레이드에서 **Azure AD Connect 다운로드** 링크를 선택합니다. **Microsoft Azure Active Directory Connect** 다운로드 페이지로 리디렉션됩니다.
+1. **Adatum Lab | Azure AD Connect** 블레이드에서 **Azure AD Connect 다운로드** 링크를 선택합니다. **Microsoft Azure Active Directory Connect** 다운로드 페이지로 리디렉션됩니다.
 
 1. **Microsoft Azure Active Directory Connect** 다운로드 페이지에서 **다운로드**를 선택합니다.
 
 1. 메시지가 표시되면 **실행**을 선택하여 **Microsoft Azure Active Directory Connect** 마법사를 시작합니다.
 
-1. **Microsoft Azure Active Directory Connect** 마법사의 **Azure AD Connect 시작** 페이지에서 **라이선스 약관 및 개인 정보 보호 공지에 동의합니다**라는 확인란을 선택하고 **계속**을 선택합니다.
+1. **Microsoft Azure Active Directory Connect** 마법사의 **Welcome to Azure AD Connect** 페이지에서 **I agree to the license terms and privacy notice**라는 확인란을 선택하고 **continue**을 선택합니다.
 
-1. **Microsoft Azure Active Directory Connect** 마법사의 **기본 설정** 페이지에서 **사용자 지정** 옵션을 선택합니다.
+1. **Microsoft Azure Active Directory Connect** 마법사의 **Express Settings** 페이지에서 **Customize** 옵션을 선택합니다.
 
-1. **필수 구성 요소 설치** 페이지에서 모든 선택적 구성 옵션의 선택을 취소하고 **설치**를 선택합니다.
+1. **Install required components** 페이지에서 모든 선택적 구성 옵션의 선택을 취소하고 **Install**를 선택합니다.
 
-1. **사용자 로그인** 페이지에서 **암호 해시 동기화**만 사용하도록 설정되었는지 확인하고 **다음**을 선택합니다.
+1. **User sign-in** 페이지에서 **Password Hash Synchronization**만 사용하도록 설정되었는지 확인하고 **Next**을 선택합니다.
 
-1. **AD Azure에 연결** 페이지에서 이전 연습에서 만든 **z30310-aaduser1** 사용자 계정의 자격 증명을 사용하여 인증하고 **다음**을 선택합니다. 
+1. **Connect to Azure AD** 페이지에서 이전 연습에서 만든 **az30310-aaduser1(예 : az30310-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의 자격 증명을 사용하여 인증하고 **Next**을 선택합니다. 
 
-1. **디렉터리 연결** 페이지에서 **adatum.com** 포리스트 항목 오른쪽에 있는 **디렉터리 추가** 버튼을 선택합니다.
+1. **Connect your directories** 페이지에서 **adatum.com** 포리스트 항목 오른쪽에 있는 **Add Directory** 버튼을 선택합니다.
 
-1. **AD 포리스트 계정** 창에서 **새 AD 계정 만들기** 옵션이 선택되었는지 확인하고 다음 자격 증명을 지정한 후 **확인**을 선택합니다:
+1. **AD forest account** 창에서 **Create new AD account** 옵션이 선택되었는지 확인하고 다음 자격 증명을 지정한 후 **OK**을 선택합니다:
 
     | 설정 | 값 | 
     | --- | --- |
     | 사용자 이름 | **ADATUM\Student** |
     | 암호 | **Pa55w.rd1234** |
 
-1. **디렉터리 연결** 페이지에서 **adatum.com** 항목이 구성된 디렉터리로 표시되는지 확인하고 **다음**을 선택합니다
+1. **Connect your directories** 페이지에서 **adatum.com** 항목이 configured directory로 표시되는지 확인하고 **Next**을 선택합니다
 
-1. **Azure AD 로그인 구성** 페이지에서 **UPN 접미사가 확인된 도메인 이름과 일치하지 않으면 사용자가 해당 온-프레미스 자격 증명을 사용하여 Azure AD에 로그인할 수 없습니다**라는 경고를 확인하고, **모든 UPN 접미사를 확인된 도메인과 일치시키지 않고 계속합니다** 확인란에 체크한 후 **다음**을 선택합니다.
+1. **Azure AD sign-in configuration** 페이지에서 **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**라는 경고를 확인하고, **Continue without matching all UPN suffixes to verified domain** 확인란에 체크한 후 **다음**을 선택합니다.
 
-    > **참고**: 앞서 설명했듯이 사용자 지정 Azure AD DNS 도메인 **adatum.com**을 확인할 수 없으므로 이러한 결과가 예상됩니다.
+    > **참고**: 앞서 설명했듯이 사용자 지정 Azure AD DNS 도메인 **adatum.com**수업 용으로 검증/확인할 수 없기 때문에 이러한 결과가 예상됩니다.
 
-1. **도메인 및 OU 필터링** 페이지에서 **선택한 도메인 및 OU 동기화** 옵션을 선택하고 모든 확인란을 선택 취소한 후 **ToSync** OU 옆에 있는 확인란만 선택하고 **다음**을 선택합니다.
+1. **Domain and OU filtering** 페이지에서 **Sync selected domains and OUs** 옵션을 선택하고 모든 확인란을 선택 취소한 후 **ToSync** OU 옆에 있는 확인란만 선택하고 **Next**를 선택합니다.
 
-1. **사용자를 고유하게 식별** 페이지에서 기본 설정을 수락하고 **다음**을 선택합니다.
+1. **Uniquely identifying your users** 페이지에서 기본 설정을 수락하고 **Next**을 선택합니다.
 
-1. **사용자 및 디바이스 필터링** 페이지에서 기본 설정을 수락하고 **다음**을 선택합니다.
+1. **Filter users and devices** 페이지에서 기본 설정을 수락하고 **Next**를 선택합니다.
 
-1. **옵션 기능** 페이지에서 기본 설정을 수락하고 **다음**을 선택합니다.
+1. **Optional features** 페이지에서 기본 설정을 수락하고 **Next**을 선택합니다.
 
-1. **구성 준비 완료** 페이지에서 **구성이 완료되면 동기화 프로세스 시작** 확인란이 선택되었는지 확인하고 **설치**를 선택합니다.
+1. **Ready to configure** 페이지에서 **Start the synchronization process when configuration completes** 확인란이 선택되었는지 확인하고 **Install**를 선택합니다.
 
     > **참고**: 설치에는 약 2분이 소요됩니다.
 
-1. **구성 완료** 페이지의 정보를 검토하고 **끝내기**를 선택하여 **Microsoft Azure Active Directory Connect** 창을 닫습니다.
+1. **Configuration complete** 페이지의 정보를 검토하고 **Exit**를 선택하여 **Microsoft Azure Active Directory Connect** 창을 닫습니다.
 
 
 #### 작업 4: 동기화된 사용자 계정의 속성 구성
 
-1. **az30310a-vm1** 원격 데스크톱 세션 내에 있는 Azure Portal을 표시하는 Internet Explorer 창에서 Adatum Lab Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드로 이동합니다.
+1. **az30310a-vm1** 원격 데스크톱 세션 내에 있는 Azure Portal을 표시하는 Internet Explorer 창에서 Adatum Lab Azure AD 테넌트의 **사용자 | 모든 사용자(미리 보기)** 블레이드로 이동합니다.
 
-1. **사용자 | 모든 사용자** 블레이드에서, 사용자 개체 목록에 **aduser1** 계정이 포함되며 **Windows Server AD**가 **원본** 열에 표시되는 것을 확인합니다.
+1. **사용자 | 모든 사용자(미리 보기)** 블레이드에서, 사용자 개체 목록에 **aduser1** 계정이 포함되며 **디렉토리가 동기화됨**이 **Yes** 로 표시되는 것을 확인합니다.
 
     > **참고**: **aduser1** 사용자 계정이 표시되도록 하려면 잠시 기다렸다가 **새로 고침**을 선택합니다.
 
-1. **사용자 | 모든 사용자** 블레이드에서 **aduser1** 항목을 선택합니다.
+1. **사용자 | 모든 사용자(미리 보기)** 블레이드에서 **aduser1** 항목을 선택합니다.
 
 1. **aduser1 | 프로필** 블레이드는 사용자 계정의 전체 이름을 기록합니다.
 
@@ -346,13 +348,13 @@ Windows 서버 관리자 자격 증명
 
 1. **aduser1 | 프로필** 블레이드의 **작업 정보** 섹션에서 **부서** 특성이 설정되지 않음에 유의합니다.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션에서 **Active Directory Administrative Center**로 전환하고, **ToSync** OU의 개체 목록에서 **aduser1** 항목을 선택한 후 **작업** 창의 **ToSync** 섹션에서 **속성**을 선택합니다.
+1. **az30310a-vm1**에 대한 원격 데스크톱 세션에서 **Active Directory Administrative Center**로 전환하고, **ToSync** OU의 개체 목록에서 **aduser1** 항목을 선택한 후 **Tasks** 창의 **Properties**을 선택합니다.
 
-1. **aduser1** 창에 있는 **조직** 섹션의 **부서** 텍스트 상자에 **영업**을 입력하고 **확인**을 선택합니다.
+1. **aduser1** 창에 있는 **Organization** 섹션의 **Department** 텍스트 상자에 **Sales**을 입력하고 **Ok**을 선택합니다.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서, **Windows PowerShell**을 시작합니다.
+1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서, 관리자 권한으로 **Windows PowerShell**을 시작합니다.
 
-1. **관리자**로부터: **Windows PowerShell** 콘솔은 다음을 실행하여 Azure AD Connect 델타 동기화를 시작합니다:
+1. **Administrator: Windows PowerShell** 콘솔은 다음을 실행하여 Azure AD Connect 델타 동기화를 시작합니다:
 
    ```powershell
    Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
@@ -360,13 +362,13 @@ Windows 서버 관리자 자격 증명
    Start-ADSyncSyncCycle -PolicyType Delta
    ```
 
-1. **aduser1 | 프로필** 블레이드를 표시하는 Internet Explorer 창으로 전환하고 페이지를 새로 고친 후 **부서** 속성이 **영업**으로 설정되어 있음을 유의하십시오.
+1. **aduser1 | 프로필** 블레이드를 표시하는 Internet Explorer 창으로 전환하고 페이지상단에 **새로 고침** 후에 **부서** 속성이 **Sales**으로 설정되어 있음을 유의하십시오.
 
     > **참고**: **부서** 특성이 설정되지 않은 상태로 유지되면 몇 분 동안 기다렸다가 페이지를 다시 새로 고침하세요.
 
 1. **aduser1 | 프로필** 블레이드에서 **편집**을 선택합니다.
 
-1. **aduser1 | 설정** 섹션의 **프로필** 블레이드에 있는 **사용 위치** 드롭다운 목록에서 **미국**을 선택한 다음 **저장**을 선택합니다.
+1. **aduser1 | 설정** 섹션의 **프로필** 블레이드에 있는 **사용량 위치** 드롭다운 목록에서 **United States**을 선택한 다음 **저장**을 선택합니다.
 
 1. **aduser1 | 프로필** 블레이드에서 **라이선스**를 선택합니다.
 
@@ -390,45 +392,45 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 1: Azure AD 보안 기본값을 사용하지 않도록 설정.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내, Azure Portal을 표시하는 Internet Explorer 창에서 **Adatum Lab |** Adatum Lab Azure AD 테넌트의 **개요** 블레이드로 이동합니다.
+1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내, Azure Portal을 표시하는 Internet Explorer 창에서 **Adatum Lab | 개요** 블레이드로 이동합니다.
 
-1. **Adatum 랩 | 개요** 블레이드의 **관리** 섹션에서 **속성**을 선택합니다.
+1. **Adatum Lab | 개요** 블레이드의 **관리** 섹션에서 **속성**을 선택합니다.
 
-1. **Adatum 랩 | 속성** 블레이드에서 페이지 하단에 있는 **보안 기본값 관리** 링크를 선택합니다.
+1. **Adatum Lab | 속성** 블레이드에서 페이지 하단에 있는 **보안 기본값 관리** 링크를 선택합니다.
 
 1. **보안 기본값 실행** 블레이드에서 **보안 기본값 실행** 스위치를 **아니요**로 설정하고 **내 조직에서 조건부 액세스를 사용 중임** 확인란을 선택한 후 **저장**을 선택합니다. 
 
 
 #### 작업 2: Azure AD 조건부 액세스 정책 만들기
 
-1. **Adatum 랩 | 속성** 블레이드의 **관리** 섹션에서 **보안**을 선택합니다.
+1. **Adatum Lab | 속성** 블레이드의 **관리** 섹션에서 **보안**을 선택합니다.
 
-1. **보안 | 시작하기** 블레이드에서 **조건부 액세스**를 선택합니다.
+1. **보안 | 시작** 블레이드에서 **조건부 액세스**를 선택합니다.
 
 1. **조건부 액세스 | 정책** 블레이드에서 **+ 새 정책**을 선택합니다.
 
-1. **새로 만들기** 블레이드의 **이름** 텍스트 상자에 **Azure Portal MFA 적용**을 입력합니다. 
+1. **새로 만들기** 블레이드의 **이름** 텍스트 상자에 **Azure portal MFA enforcement**을 입력합니다. 
 
 1. **새로 만들기** 블레이드의 **할당** 섹션에서 **사용자 및 그룹**을 선택하고 **포함** 탭에서 **사용자 및 그룹 선택**을 선택한 후 **사용자 및 그룹** 확인란을 선택하고 **선택** 블레이드에서 **aduser1**을 선택하고 **선택**을 클릭하여 선택 사항을 확인합니다.
 
-1. **새로 만들기** 블레이드로 돌아가 **할당** 섹션에서 **클라우드 앱 또는 작업**을 선택하고 **포함** 탭에서 **앱 선택**을 선택한 후 **선택**을 클릭하고 **선택** 블레이드에서 **Microsoft Azure 관리** 확인란을 선택한 후 **선택**을 클릭하여 선택 사항을 확인합니다.
+1. **새로 만들기** 블레이드로 돌아가 **할당** 섹션에서 **클라우드 앱 또는 작업**을 선택하고 **포함** 탭에서 **앱 선택**을 선택한 후 **선택**을 클릭하고 **선택** 블레이드에서 **Microsoft Azure Management** 확인란을 선택한 후 **선택**을 클릭하여 선택 사항을 확인합니다.
 
-1. **새로 만들기** 블레이드로 돌아가 **액세스 제어** 섹션에서 **권한 부여**를 선택하고 **권한 부여** 블레이드에서 **권한 부여** 옵션이 선택되었는지 확인한 후 **다단계 인증 필요**를 선택하고 **선택**을 클릭하여 선택 사항을 확인합니다.
+1. **새로 만들기** 블레이드로 돌아가 **액세스 제어** 섹션에서 **허용**를 선택하고 **허용** 블레이드에서 **액세스 허용** 옵션이 선택되었는지 확인한 후 **다단계 인증 기능 필요**를 선택하고 **선택**을 클릭하여 선택 사항을 확인합니다.
 
-1. **새로 만들기** 블레이드로 돌아가 **정책 실행** 스위치를 **켜기**로 설정하고 **만들기**를 선택합니다.
+1. **새로 만들기** 블레이드로 돌아가 **정책 사용** 스위치를 **설정**으로 설정하고 **만들기**를 선택합니다.
 
 
 #### 작업 3: Azure AD 조건부 액세스 확인
 
 1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 새로운 **InPrivate 브라우징** Internet Explorer 창을 시작하고 액세스 패널 애플리케이션 포털([https://account.activedirectory.windowsazure.com](https://account.activedirectory.windowsazure.com))로 이동합니다.
 
-1. 메시지가 표시되면 이전 연습에 기록된 전체 사용자 이름과 **Pa55w.rd1234** 암호를 사용하여 **aduser1**의 동기화된 Azure AD 계정을 통해 로그인합니다. 
+1. 메시지가 표시되면 이전 연습에 기록된 전체 사용자 이름과 **Pa55w.rd1234** 암호를 사용하여 **aduser1(예 : aduser1@hahaysh.onmicrosoft.com )**의 동기화된 Azure AD 계정을 통해 로그인합니다. 
 
 1. 액세스 패널 애플리케이션 포털에 성공적으로 로그인했는지 확인합니다. 
 
 1. 동일한 브라우저 창에서 [Azure portal](https://portal.azure.com)로 이동합니다.
 
-1. 이번에는 **더 많은 정보 필요** 메시지가 표시됩니다. 메시지를 표시하는 페이지 내에서 **다음**을 선택합니다. 
+1. 이번에는 **More information required ** 메시지가 표시됩니다. 메시지를 표시하는 페이지 내에서 **Next**를 선택합니다. 
 
 1. 이 시점에서 **추가 보안 확인** 페이지로 리디렉션되어 다단계 인증 구성에 대해 안내 받습니다.
 
@@ -437,15 +439,15 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 4: 랩에 배포된 Azure 리소스 제거
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고 [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://go.microsoft.com/fwlink/p/?LinkId=286152)에서 IT 전문가 RTW용 Microsoft 온라인 서비스 로그인 도우미로 이동합니다. 
+1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고 [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://go.microsoft.com/fwlink/p/?LinkId=286152)에서 **Microsoft Online Services Sign-In Assistant for IT Professionals RTW**로 이동합니다. 
 
-1. IT 전문가 RTW용 Microsoft 온라인 서비스 로그인 도우미 다운로드 페이지에서 **다운로드**를 선택하고 **원하는 다운로드 선택**에서 **en\msoidcli_64.msi**를 선택한 후 **다음**을 선택합니다. 
+1. **Microsoft Online Services Sign-In Assistant for IT Professionals RTW** 다운로드 페이지에서 **다운로드**를 선택하고 **원하는 다운로드 선택**에서 **en\msoidcli_64.msi**를 선택한 후 **다음**을 선택합니다. 
 
-1. 메시지가 표시되면 기본 옵션으로 **Microsoft 온라인 서비스 로그인 도우미 설정**을 실행합니다.
+1. 기본 옵션으로 다운로드 후에 **Microsoft Online Services Sign-in Assistant Setup**을 설치합니다.
 
-1. 설치가 완료되면 **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 **Windows PowerShell** 콘솔을 시작합니다.
+1. 설치가 완료되면 **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 **Windows PowerShell** 콘솔을 관리자 권한으로 시작합니다.
 
-1. **관리자:**에서** Windows PowerShell** 창은 다음을 실행하여 필요한 PowerShell 모듈을 설치합니다:
+1. **Administrator: Windows PowerShell** 창은 다음을 실행하여 필요한 PowerShell 모듈을 설치합니다:
 
    ```powershell
    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -458,7 +460,7 @@ Windows 서버 관리자 자격 증명
    Connect-MsolService
    ```
 
-1. 인증하라는 메시지가 표시되면 **az30310-aaduser1** 사용자 계정의  자격 증명을 제공합니다.
+1. 인증하라는 메시지가 표시되면 **az30310-aaduser1(예 : az30310-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의  자격 증명을 제공합니다.
 
 1. **관리자:**에서** Windows PowerShell** 창은 다음을 실행하여 Azure AD Connect 동기화를 사용하지 않도록 설정합니다:
 
@@ -466,15 +468,15 @@ Windows 서버 관리자 자격 증명
    Set-MsolDirSyncEnabled -EnableDirSync $false -Force
    ```
 
-1. 랩 컴퓨터에서 Azure Portal을 표시하는 브라우저 창에서 **Azure  Active Directory Premium P2 - 라이선스가 부여된 사용자** 블레이드로 이동하여 이 랩에서 라이선스를 할당한 사용자 계정을 선택하고 **라이선스 제거**를 선택하고 확인하라는 메시지가 표시되면 **확인**을 선택합니다.
+1. 랩 컴퓨터에서 Azure Portal을 표시하는 브라우저 창에서 Azure Active Directory에서 라이선스, 모든제품, **Azure Active Directory Premium P2 | 허가된 사용자** 블레이드로 이동하여 이 랩에서 라이선스를 할당한 사용자 계정을 선택하고 **라이선스 제거**를 선택하고 확인하라는 메시지가 표시되면 **확인**을 선택합니다.
 
-1. Azure Portal에서 **사용자 - 모든 사용자** 블레이드로 이동하여 이 랩에서 만든 모든 사용자 계정에 **원본** 열에 **Azure Active Directory** 항목이 있는지 확인합니다. 
+1. Azure Portal에서 Azure Active Directory에서 **사용자 | 모든 사용자(미리 보기)** 블레이드로 이동하여 이 랩에서 만든 모든 사용자 계정에 **원본** 열에 **Azure Active Directory** 항목이 있는지 확인합니다. 
 
     > **참고**: 그렇지 않은 경우 브라우저 페이지를 새로 고칩니다.
 
-1. **사용자 - 모든 사용자** 블레이드에서 이 랩에서 만든 각 사용자 계정을 선택하고 도구 모음에서 **삭제**를 선택합니다. 
+1. **사용자 | 모든 사용자(미리 보기)** 블레이드에서 이 랩에서 만든 각 사용자 계정을 선택하고 도구 모음에서 **삭제**를 선택합니다. 
 
-1. Adatum Lab Azure AD 테넌트의  **Adatum Lab - 개요** 블레이드로 이동하여 **테넌트 삭제**를 선택하고 **디렉터리 'Adatum Lab' 삭제** 블레이드에서 **Azure 리소스 링크를 삭제할 수 있는 권한 가져오기**를 선택하고 Azure Active Directory의 **속성** 블레이드에서 **Azure 리소스 액세스 관리**를 **예**로 설정하고 **저장**을 선택합니다.
+1. Azure Active Directory에서  **Adatum Lab - 개요** 블레이드로 이동하여 **테넌트 삭제**를 선택하고 **디렉터리 'Adatum Lab' 삭제** 블레이드에서 **Azure 리소스 링크를 삭제할 수 있는 권한 가져오기**를 선택하고 Azure Active Directory의 **속성** 블레이드에서 **Azure 리소스 액세스 관리**를 **예**로 설정하고 **저장**을 선택합니다.
 
 1. Azure Portal에서 로그아웃하고 다시 로그인합니다. 
 
