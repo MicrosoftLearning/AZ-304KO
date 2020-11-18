@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     title: '4: Azure AD 인증 및 권한 부여 관리'
     module: '모듈 4: 인증 및 권한 부여 디자인'
@@ -48,7 +48,7 @@ Windows 서버 관리자 자격 증명
 
 ## 랩 파일
 
--  \\\\AZ303\\AllFiles\\Labs\\10\\azuredeploy30310suba.json
+-  \\\\AZ304\\AllFiles\\Labs\\10\\azuredeploy30410suba.json
 
 
 ## 지침
@@ -77,7 +77,10 @@ Windows 서버 관리자 자격 증명
     ```powershell
     Test-AzDnsAvailability -DomainNameLabel <custom-label> -Location '<location>'
     ```
-      > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 식별하려면 [https://azure.microsoft.com/ko-kr/regions/offers/](https://azure.microsoft.com/ko-kr/regions/offers/)를 참고하세요.
+      > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 식별하려면 [https://azure.microsoft.com/ko-kr/regions/offers/](https://azure.microsoft.com/ko-kr/regions/offers/)를 참고하세요. **Powershell cmdlet**을 사용하여 지역의 목록을 가져올 수도 있습니다
+      ```powershell
+      Get-AzLocation | FT
+      ```
 
 1. 이 명령이 **True**를 반환하는지 확인합니다. True가 반환되지 않으면 **True**가 반환될 때까지 `<custom-label>`의 다른 값을 사용해 같은 명령을 다시 실행합니다.
 
@@ -86,18 +89,20 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 2: Azure Resource Manager 빠른 시작 템플릿을 사용하여 AD DS 도메인 컨트롤러를 호스트하는 Azure VM 배포
 
-1. Azure Portal의 Cloud Shell 창의 도구 모음에서 **파일 업로드/다운로드** 아이콘을 선택하고 드롭다운 메뉴에서 **업로드**를 선택하고 파일**\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310suba.json**을 Cloud Shell 홈 디렉터리에 업로드합니다.
+1. Azure Portal의 Cloud Shell 창의 도구 모음에서 **파일 업로드/다운로드** 아이콘을 선택하고 드롭다운 메뉴에서 **업로드**를 선택하고 파일**\\\\AZ304\\AllFiles\Labs\\10\\azuredeploy30410suba.json**을 Cloud Shell 홈 디렉터리에 업로드합니다.
 
 1. Cloud Shell 창에서 다음 명령을 실행하여 리소스 그룹을 만듭니다. 여기서 `<Azure region>` 자리 표시자는 이전 작업에서 지정한 Azure 지역의 이름으로 바꿉니다.
 
    ```powershell
    $location = '<Azure region>'
+   ```
+   ```powershell
    New-AzSubscriptionDeployment `
      -Location $location `
-     -Name az30310subaDeployment `
-     -TemplateFile $HOME/azuredeploy30310suba.json `
+     -Name az30410subaDeployment `
+     -TemplateFile $HOME/azuredeploy30410suba.json `
      -rgLocation $location `
-     -rgName 'az30310a-labRG'
+     -rgName 'az30410a-labRG'
    ```
 
 1. Azure Portal에서 **Cloud Shell** 창을 닫습니다.
@@ -115,7 +120,7 @@ Windows 서버 관리자 자격 증명
     | 설정 | 값 | 
     | --- | --- |
     | 구독 | 이 랩에서 사용 중인 Azure 구독의 이름 |
-    | 리소스 그룹 | **az30310a-LabRG** |
+    | 리소스 그룹 | **az30410a-LabRG** |
     | DNS 접두사 | 이전 작업에서 확인한 DNS 호스트 이름| 
 
 1. **Create an Azure VM with a new AD Forest** 블레이드에서 **검토+만들기** 확인란을 선택하고 다음 화면에서 **만들기**를 선택합니다.
@@ -154,7 +159,7 @@ Windows 서버 관리자 자격 증명
 
 1. Azure Potal을 표시하는 브라우저 페이지를 새로 고치고 **Azure Active Directory**를 검색 및 선택하고 Azure Active Directory 블레이드에서 **테넌트 전환**을 선택합니다.
 
-1. **테넌트 전환(미리보기)** 블레이드에서 **Adatum Lab**을 선택합니다. 
+1. **디렉터리 + 구독** 블레이드의 **Adatum Lab** 카드에서 **전환을** 클릭합니다.
 
 
 #### 작업 2: Azure AD 사용자 생성 및 구성
@@ -171,8 +176,8 @@ Windows 서버 관리자 자격 증명
 
     | 설정 | 값 |
     | --- | --- |
-    | 사용자 이름 | **az30310-aaduser1** |
-    | 이름 | **az30310-aaduser1** |
+    | 사용자 이름 | **az30410-aaduser1** |
+    | 이름 | **az30410-aaduser1** |
     | 암호 자동 생성 | 선택 |
     | 암호 표시 | 체크 |
     | 역할 | **전역 관리자('전역 관리자'로 검색해서 선택)** |
@@ -182,9 +187,9 @@ Windows 서버 관리자 자격 증명
 
 1. **새 사용자** 블레이드에서 **만들기**를 선택합니다.
 
-1. 랩 컴퓨터에서는 Microsoft 엣지브라우저의 **InPrivate** 브라우저 창을 열고 새로 만든 **az30310-aaduser1(앞서생성한 테넌트 조합. 예:'az30310-aaduser1@hahaysh.onmicrosoft.com')** 사용자 계정을 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다. 암호를 업데이트하라는 메시지가 표시되면 암호를 **Pa55w.rd1234**로 변경합니다. 
+1. 랩 컴퓨터에서는 Microsoft 엣지브라우저의 **InPrivate** 브라우저 창을 열고 새로 만든 **az30410-aaduser1(앞서생성한 테넌트 조합. 예:'az30410-aaduser1@hahaysh.onmicrosoft.com')** 사용자 계정을 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다. 암호를 업데이트하라는 메시지가 표시되면 암호를 **Pa55w.rd1234**로 변경합니다. 
 
-1. Azure Portal에서 **az30310-aaduser1** 사용자로 로그아웃하고 InPrivate 브라우저 창을 닫습니다.
+1. Azure Portal에서 **az30410-aaduser1** 사용자로 로그아웃하고 InPrivate 브라우저 창을 닫습니다.
 
 
 #### 작업 3: Azure AD Premium P2 라이선스 정품 인증 및 할당
@@ -201,7 +206,7 @@ Windows 서버 관리자 자격 증명
 
 1. **Azure Active Directory Premium P2 | 허가된 사용자** 블레이드에서 **+ 할당**을 선택합니다. 
 
-1. **라이선스 할당** 블레이드에서 **사용자**를 선택하고 **사용자** 블레이드에서 로그인한 계정과 **az30310-aaduser1** 사용자 계정을 모두 선택합니다.
+1. **라이선스 할당** 블레이드에서 **사용자**를 선택하고 **사용자** 블레이드에서 로그인한 계정과 **az30410-aaduser1** 사용자 계정을 모두 선택합니다.
 
 1. **라이선스 할당** 블레이드로 돌아가서 **할당 옵션**을 선택하고 **라이선스 옵션** 블레이드에 나열된 옵션을 검토한 후 **확인**을 선택합니다.
 
@@ -223,7 +228,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 1: Azure AD 테넌트에 사용자 지정 도메인 이름 할당
 
-1. Azure Portal에서 **Adatum Lab | 개요** 블레이드로 이동합니다.
+1. Azure Portal에서 **Azure Active Directory Adatum Lab | 개요** 블레이드로 이동합니다.
 
 1. **Adatum Lab | 개요** 블레이드에서 **사용자 지정 도메인 이름**을 선택합니다.
 
@@ -244,11 +249,9 @@ Windows 서버 관리자 자격 증명
 
 > **참고**: 이 연습을 시작하기 전에 랩 시작 시 했었던 Azure VM의 배포가 완료되었는지 확인합니다.
 
-1. Azure Portal에서 오른쪽 위 **"사용자 계정"**을 선택하고 **디렉토리 전환** 블레이드에서 앞서 Azure VM을 배포했던 디렉토리를 선택합니다.
+1. Azure Portal에서 **"가상 머신"**을 검색하고 선택한 다음 **"가상 머신"** 블레이드에서 **az30410a-vm1**를 선택합니다.
 
-1. Azure Portal **리소스 그룹** 메뉴 를 선택하고  **az30310a-labRG**을 선택, **가상 머신** **az30310a-vm1**을 선택합니다.
-
-1. **az30310a-vm1** 블레이드의 드롭다운 메뉴에서 **연결**을 선택하고 **az30310a-vm1**의 **RDP** 탭에서 **RDP**를 선택합니다.**| IP 주소** 드롭다운 목록에서 **부하 분산 장치 공용 IP 주소** 항목을 선택한 다음 **RDP 파일 다운로드**를 선택/실행 합니다.
+1. **az30410a-vm1** 블레이드의 드롭다운 메뉴에서 **연결을** 선택합니다. **az30410a-vm1 | 연결** 블레이드의 **RDP** 탭 아래 드롭다운 메뉴에서 **RDP**를 선택합니다. **IP 주소** 드롭다운 목록에서 **부하 분산 장치 공용 IP 주소** 항목을 선택하고 **RDP 파일 다운로드를** 선택합니다.
 
 1. 메시지가 표시되면 다음 자격 증명으로 로그인합니다.
 
@@ -257,9 +260,9 @@ Windows 서버 관리자 자격 증명
     | 사용자 이름 | **Student** |
     | 암호 | **Pa55w.rd1234** |
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 내 Server Manager 창에서 왼쪽에 항목 중 **Local Server**를 선택하고 **IE Enhanced Security Configuration** 레이블 옆에 있는 **On** 링크를 선택한 다음, **IE Enhanced Security Configuration** 대화 상자에서 둘 다 **Off** 옵션을 선택합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 내 Server Manager 창에서 왼쪽에 항목 중 **Local Server**를 선택하고 **IE Enhanced Security Configuration** 레이블 옆에 있는 **On** 링크를 선택한 다음, **IE Enhanced Security Configuration** 대화 상자에서 둘 다 **Off** 옵션을 선택합니다.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 Server Manager창 오른쪽 위쪽에 메뉴 **Tools**를 선택하고 드롭다운 메뉴에서 **Active Directory Administrative Center**를 선택합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 Server Manager창 오른쪽 위쪽에 메뉴 **Tools**를 선택하고 드롭다운 메뉴에서 **Active Directory Administrative Center**를 선택합니다.
 
 1. **Active Directory Administrative Center**에서 **adatum(로컬)** 을 선택하고 오른쪽 레이어에 **Tasks** 창에서 **New**를 선택한 후 계단식 메뉴에서 **Organization Unit**를 선택합니다.
 
@@ -282,7 +285,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 3: Azure AD Connect 설치
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고, [Azure portal](https://portal.azure.com)로 이동하여 이전 연습에서 만든 **az30310-aaduser1** 사용자 계정을 통해 로그인합니다. 메시지가 표시되면 기록한 전체 사용자 이름과 **Pa55w.rd1234** 암호를 지정합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고, [Azure portal](https://portal.azure.com)로 이동하여 이전 연습에서 만든 **az30410-aaduser1** 사용자 계정을 통해 로그인합니다. 메시지가 표시되면 기록한 전체 사용자 이름과 **Pa55w.rd1234** 암호를 지정합니다.
 
 1. Azure Portal에서 **Azure Active Directory**를 검색하여 선택하고 **Adatum Lab | 개요** 블레이드에서 **Azure AD Connect**를 선택합니다.
 
@@ -300,7 +303,7 @@ Windows 서버 관리자 자격 증명
 
 1. **User sign-in** 페이지에서 **Password Hash Synchronization**만 사용하도록 설정되었는지 확인하고 **Next**을 선택합니다.
 
-1. **Connect to Azure AD** 페이지에서 이전 연습에서 만든 **az30310-aaduser1(예 : az30310-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의 자격 증명을 사용하여 인증하고 **Next**을 선택합니다. 
+1. **Connect to Azure AD** 페이지에서 이전 연습에서 만든 **az30410-aaduser1(예 : az30410-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의 자격 증명을 사용하여 인증하고 **Next**을 선택합니다. 
 
 1. **Connect your directories** 페이지에서 **adatum.com** 포리스트 항목 오른쪽에 있는 **Add Directory** 버튼을 선택합니다.
 
@@ -334,7 +337,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 4: 동기화된 사용자 계정의 속성 구성
 
-1. **az30310a-vm1** 원격 데스크톱 세션 내에 있는 Azure Portal을 표시하는 Internet Explorer 창에서 Adatum Lab Azure AD 테넌트의 **사용자 | 모든 사용자(미리 보기)** 블레이드로 이동합니다.
+1. **az30410a-vm1** 원격 데스크톱 세션 내에 있는 Azure Portal을 표시하는 Internet Explorer 창에서 Adatum Lab Azure AD 테넌트의 **사용자 | 모든 사용자(미리 보기)** 블레이드로 이동합니다.
 
 1. **사용자 | 모든 사용자(미리 보기)** 블레이드에서, 사용자 개체 목록에 **aduser1** 계정이 포함되며 **디렉토리가 동기화됨**이 **Yes** 로 표시되는 것을 확인합니다.
 
@@ -348,11 +351,11 @@ Windows 서버 관리자 자격 증명
 
 1. **aduser1 | 프로필** 블레이드의 **작업 정보** 섹션에서 **부서** 특성이 설정되지 않음에 유의합니다.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션에서 **Active Directory Administrative Center**로 전환하고, **ToSync** OU의 개체 목록에서 **aduser1** 항목을 선택한 후 **Tasks** 창의 **Properties**을 선택합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션에서 **Active Directory Administrative Center**로 전환하고, **ToSync** OU의 개체 목록에서 **aduser1** 항목을 선택한 후 **Tasks** 창의 **Properties**을 선택합니다.
 
 1. **aduser1** 창에 있는 **Organization** 섹션의 **Department** 텍스트 상자에 **Sales**을 입력하고 **Ok**을 선택합니다.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서, 관리자 권한으로 **Windows PowerShell**을 시작합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서, 관리자 권한으로 **Windows PowerShell**을 시작합니다.
 
 1. **Administrator: Windows PowerShell** 콘솔은 다음을 실행하여 Azure AD Connect 델타 동기화를 시작합니다:
 
@@ -392,7 +395,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 1: Azure AD 보안 기본값을 사용하지 않도록 설정.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내, Azure Portal을 표시하는 Internet Explorer 창에서 **Adatum Lab | 개요** 블레이드로 이동합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내, Azure Portal을 표시하는 Internet Explorer 창에서 **Adatum Lab | 개요** 블레이드로 이동합니다.
 
 1. **Adatum Lab | 개요** 블레이드의 **관리** 섹션에서 **속성**을 선택합니다.
 
@@ -422,7 +425,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 3: Azure AD 조건부 액세스 확인
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 새로운 **InPrivate 브라우징** Internet Explorer 창을 시작하고 액세스 패널 애플리케이션 포털([https://account.activedirectory.windowsazure.com](https://account.activedirectory.windowsazure.com))로 이동합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 새로운 **InPrivate 브라우징** Internet Explorer 창을 시작하고 액세스 패널 애플리케이션 포털([https://account.activedirectory.windowsazure.com](https://account.activedirectory.windowsazure.com))로 이동합니다.
 
 1. 메시지가 표시되면 이전 연습에 기록된 전체 사용자 이름과 **Pa55w.rd1234** 암호를 사용하여 **aduser1(예 : aduser1@hahaysh.onmicrosoft.com )**의 동기화된 Azure AD 계정을 통해 로그인합니다. 
 
@@ -439,13 +442,13 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 4: 랩에 배포된 Azure 리소스 제거
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고 [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://go.microsoft.com/fwlink/p/?LinkId=286152)에서 **Microsoft Online Services Sign-In Assistant for IT Professionals RTW**로 이동합니다. 
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고 [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://go.microsoft.com/fwlink/p/?LinkId=286152)에서 **Microsoft Online Services Sign-In Assistant for IT Professionals RTW**로 이동합니다. 
 
 1. **Microsoft Online Services Sign-In Assistant for IT Professionals RTW** 다운로드 페이지에서 **다운로드**를 선택하고 **원하는 다운로드 선택**에서 **en\msoidcli_64.msi**를 선택한 후 **다음**을 선택합니다. 
 
 1. 기본 옵션으로 다운로드 후에 **Microsoft Online Services Sign-in Assistant Setup**을 설치합니다.
 
-1. 설치가 완료되면 **az30310a-vm1**에 대한 원격 데스크톱 세션 내에서 **Windows PowerShell** 콘솔을 관리자 권한으로 시작합니다.
+1. 설치가 완료되면 **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 **Windows PowerShell** 콘솔을 관리자 권한으로 시작합니다.
 
 1. **Administrator: Windows PowerShell** 창은 다음을 실행하여 필요한 PowerShell 모듈을 설치합니다:
 
@@ -460,7 +463,7 @@ Windows 서버 관리자 자격 증명
    Connect-MsolService
    ```
 
-1. 인증하라는 메시지가 표시되면 **az30310-aaduser1(예 : az30310-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의  자격 증명을 제공합니다.
+1. 인증하라는 메시지가 표시되면 **az30410-aaduser1(예 : az30410-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의  자격 증명을 제공합니다.
 
 1. **관리자:**에서** Windows PowerShell** 창은 다음을 실행하여 Azure AD Connect 동기화를 사용하지 않도록 설정합니다:
 
@@ -472,8 +475,6 @@ Windows 서버 관리자 자격 증명
 
 1. Azure Portal에서 Azure Active Directory에서 **사용자 | 모든 사용자(미리 보기)** 블레이드로 이동하여 이 랩에서 만든 모든 사용자 계정에 **원본** 열에 **Azure Active Directory** 항목이 있는지 확인합니다. 
 
-    > **참고**: 그렇지 않은 경우 브라우저 페이지를 새로 고칩니다.
-
 1. **사용자 | 모든 사용자(미리 보기)** 블레이드에서 이 랩에서 만든 각 사용자 계정을 선택하고 도구 모음에서 **삭제**를 선택합니다. 
 
 1. Azure Active Directory에서  **Adatum Lab - 개요** 블레이드로 이동하여 **테넌트 삭제**를 선택하고 **디렉터리 'Adatum Lab' 삭제** 블레이드에서 **Azure 리소스 링크를 삭제할 수 있는 권한 가져오기**를 선택하고 Azure Active Directory의 **속성** 블레이드에서 **Azure 리소스 액세스 관리**를 **예**로 설정하고 **저장**을 선택합니다.
@@ -482,12 +483,12 @@ Windows 서버 관리자 자격 증명
 
 1. **디렉터리 'Adatum Lab' 삭제** 블레이드로 다시 이동하여 **삭제**를 선택합니다.
 
-1. **az30310a-vm1**에 대한 원격 데스크톱 세션 내 Azure Portal을 표시하는 브라우저 창의 Cloud Shell 창 내에서 PowerShell 세션을 시작합니다.
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내 Azure Portal을 표시하는 브라우저 창의 Cloud Shell 창 내에서 PowerShell 세션을 시작합니다.
 
 1. Cloud Shell 창에서 다음을 실행하여 이 연습에서 만든 리소스 그룹을 나열합니다.
 
    ```powershell
-   Get-AzResourceGroup -Name 'az30310*'
+   Get-AzResourceGroup -Name 'az30410*'
    ```
 
     > **참고**: 이 랩에서 만든 리소스 그룹만 출력에 포함되어 있는지 확인합니다. 이 작업에서는 이러한 그룹을 삭제할 것입니다.
@@ -495,7 +496,7 @@ Windows 서버 관리자 자격 증명
 1. Cloud Shell 창에서 다음을 실행하여 이 랩에서 만든 리소스 그룹을 삭제합니다.
 
    ```powershell
-   Get-AzResourceGroup -Name 'az30310*' | Remove-AzResourceGroup -Force -AsJob
+   Get-AzResourceGroup -Name 'az30410*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
 1. Cloud Shell 창을 닫습니다.

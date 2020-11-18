@@ -78,7 +78,7 @@ Windows 서버 관리자 자격 증명
     | 서버 관리자 로그인 | **sqladmin** |
     | 암호 | **Pa55w.rd1234** |
     | 위치 | SQL Database를 프로비전할 수 있는 Azure 지역의 이름 |
-    | Azure 서비스에서 서버에 액세스할 수 있도록 허용 | ***확인란 선택*** |
+    | Azure 서비스에서 서버에 액세스할 수 있도록 허용 | ***확인란이 선택 해제되었는지 확인*** |
 
 1. **컴퓨팅 + 스토리지** 레이블 옆에 **데이터베이스 구성** 링크를 선택합니다.
 
@@ -313,6 +313,12 @@ Windows 서버 관리자 자격 증명
 
    ```sh
    az group list --query "[?starts_with(name,'az30303')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+   ```
+
+1. Cloud Shell 창에서 다음을 실행하여 **az30303a1**라는 이름의 폴더를 삭제합니다:
+
+   ```sh
+   rm -r ~/az30303a1
    ```
 
 1. Cloud Shell 창을 닫습니다.
