@@ -89,7 +89,7 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 2: Azure Resource Manager 빠른 시작 템플릿을 사용하여 AD DS 도메인 컨트롤러를 호스트하는 Azure VM 배포
 
-1. Azure Portal의 Cloud Shell 창의 도구 모음에서 **파일 업로드/다운로드** 아이콘을 선택하고 드롭다운 메뉴에서 **업로드**를 선택하고 파일**\\\\AZ304\\AllFiles\Labs\\10\\azuredeploy30410suba.json**을 Cloud Shell 홈 디렉터리에 업로드합니다.
+1. Azure Portal의 Cloud Shell 창의 도구 모음에서 **파일 업로드/다운로드** 아이콘을 선택하고 드롭다운 메뉴에서 **업로드**를 선택하고 파일 **\\\\AZ304\\AllFiles\Labs\\10\\azuredeploy30410suba.json** 을 Cloud Shell 홈 디렉터리에 업로드합니다.
 
 1. Cloud Shell 창에서 다음 명령을 실행하여 리소스 그룹을 만듭니다. 여기서 `<Azure region>` 자리 표시자는 이전 작업에서 지정한 Azure 지역의 이름으로 바꿉니다.
 
@@ -109,7 +109,7 @@ Windows 서버 관리자 자격 증명
 
 1. 랩 컴퓨터에서 다른 브라우저 탭을 열고 [https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain)로 이동합니다. 
 
-1. **Create a new Windows VM and create a new AD Forest, Domain and DC** 페이지에서  **Deploy to Azure**를 선택합니다. 이렇게 하면 Azure Portal의 **Create an Azure VM with a new AD Forest** 블레이드로 브라우저가 자동으로 리디렉션됩니다.
+1. **Create a new Windows VM and create a new AD Forest, Domain and DC** 페이지에서 **Deploy to Azure**를 선택합니다. 이렇게 하면 Azure Portal의 **Create an Azure VM with a new AD Forest** 블레이드로 브라우저가 자동으로 리디렉션됩니다.
 
 1. **Create an Azure VM with a new AD Forest** 블레이드에서 **Edit parameters**을 선택합니다.
 
@@ -187,7 +187,7 @@ Windows 서버 관리자 자격 증명
 
 1. **새 사용자** 블레이드에서 **만들기**를 선택합니다.
 
-1. 랩 컴퓨터에서는 Microsoft 엣지브라우저의 **InPrivate** 브라우저 창을 열고 새로 만든 **az30410-aaduser1(앞서생성한 테넌트 조합. 예:'az30410-aaduser1@hahaysh.onmicrosoft.com')** 사용자 계정을 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다. 암호를 업데이트하라는 메시지가 표시되면 암호를 **Pa55w.rd1234**로 변경합니다. 
+1. 랩 컴퓨터에서는 Microsoft 엣지브라우저의 **InPrivate** 브라우저 창을 열고 새로 만든 **az30410-aaduser1** 사용자 계정을 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다. 암호를 업데이트하라는 메시지가 표시되면 암호를 **Pa55w.rd1234**로 변경합니다. 
 
 1. Azure Portal에서 **az30410-aaduser1** 사용자로 로그아웃하고 InPrivate 브라우저 창을 닫습니다.
 
@@ -202,7 +202,7 @@ Windows 서버 관리자 자격 증명
 
 1. **라이선스 | 모든 제품** 블레이드를 표시하는 브라우저 창을 새로 고치고 정품 인증이 성공했는지 확인합니다. 
 
-1. **라이선스 | 모든 제품** 블레이드에서 **Azure Active Directory Premium P2** 항목을 선택합니다. 
+1. **라이선스 - 모든 제품** 블레이드에서 **Azure Active Directory Premium P2** 항목을 선택합니다. 
 
 1. **Azure Active Directory Premium P2 | 허가된 사용자** 블레이드에서 **+ 할당**을 선택합니다. 
 
@@ -249,7 +249,7 @@ Windows 서버 관리자 자격 증명
 
 > **참고**: 이 연습을 시작하기 전에 랩 시작 시 했었던 Azure VM의 배포가 완료되었는지 확인합니다.
 
-1. Azure Portal에서 **"가상 머신"**을 검색하고 선택한 다음 **"가상 머신"** 블레이드에서 **az30410a-vm1**를 선택합니다.
+1. Azure Portal에서 **"가상 머신"** 을 검색하고 선택한 다음 **"가상 머신"** 블레이드에서 **az30410a-vm1**를 선택합니다.
 
 1. **az30410a-vm1** 블레이드의 드롭다운 메뉴에서 **연결을** 선택합니다. **az30410a-vm1 | 연결** 블레이드의 **RDP** 탭 아래 드롭다운 메뉴에서 **RDP**를 선택합니다. **IP 주소** 드롭다운 목록에서 **부하 분산 장치 공용 IP 주소** 항목을 선택하고 **RDP 파일 다운로드를** 선택합니다.
 
@@ -303,7 +303,7 @@ Windows 서버 관리자 자격 증명
 
 1. **User sign-in** 페이지에서 **Password Hash Synchronization**만 사용하도록 설정되었는지 확인하고 **Next**을 선택합니다.
 
-1. **Connect to Azure AD** 페이지에서 이전 연습에서 만든 **az30410-aaduser1(예 : az30410-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의 자격 증명을 사용하여 인증하고 **Next**을 선택합니다. 
+1. **Connect to Azure AD** 페이지에서 이전 연습에서 만든 **az30410-aaduser1**(예 : az30410-aaduser1@hahaysh.onmicrosoft.com) 사용자 계정의 자격 증명을 사용하여 인증하고 **Next**을 선택합니다. 
 
 1. **Connect your directories** 페이지에서 **adatum.com** 포리스트 항목 오른쪽에 있는 **Add Directory** 버튼을 선택합니다.
 
@@ -427,13 +427,13 @@ Windows 서버 관리자 자격 증명
 
 1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 새로운 **InPrivate 브라우징** Internet Explorer 창을 시작하고 액세스 패널 애플리케이션 포털([https://account.activedirectory.windowsazure.com](https://account.activedirectory.windowsazure.com))로 이동합니다.
 
-1. 메시지가 표시되면 이전 연습에 기록된 전체 사용자 이름과 **Pa55w.rd1234** 암호를 사용하여 **aduser1(예 : aduser1@hahaysh.onmicrosoft.com )**의 동기화된 Azure AD 계정을 통해 로그인합니다. 
+1. 메시지가 표시되면 이전 연습에 기록된 전체 사용자 이름과 **Pa55w.rd1234** 암호를 사용하여 **aduser1** (예 : aduser1@hahaysh.onmicrosoft.com)의 동기화된 Azure AD 계정을 통해 로그인합니다. 
 
 1. 액세스 패널 애플리케이션 포털에 성공적으로 로그인했는지 확인합니다. 
 
 1. 동일한 브라우저 창에서 [Azure portal](https://portal.azure.com)로 이동합니다.
 
-1. 이번에는 **More information required ** 메시지가 표시됩니다. 메시지를 표시하는 페이지 내에서 **Next**를 선택합니다. 
+1. 이번에는 **More information required** 메시지가 표시됩니다. 메시지를 표시하는 페이지 내에서 **Next**를 선택합니다. 
 
 1. 이 시점에서 **추가 보안 확인** 페이지로 리디렉션되어 다단계 인증 구성에 대해 안내 받습니다.
 
@@ -442,9 +442,9 @@ Windows 서버 관리자 자격 증명
 
 #### 작업 4: 랩에 배포된 Azure 리소스 제거
 
-1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고 [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://go.microsoft.com/fwlink/p/?LinkId=286152)에서 **Microsoft Online Services Sign-In Assistant for IT Professionals RTW**로 이동합니다. 
+1. **az30410a-vm1**에 대한 원격 데스크톱 세션 내에서 Internet Explorer를 시작하고 [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://go.microsoft.com/fwlink/p/?LinkId=286152)에서 Microsoft Online Services Sign-In Assistant for IT Professionals RTW로 이동합니다. 
 
-1. **Microsoft Online Services Sign-In Assistant for IT Professionals RTW** 다운로드 페이지에서 **다운로드**를 선택하고 **원하는 다운로드 선택**에서 **en\msoidcli_64.msi**를 선택한 후 **다음**을 선택합니다. 
+1. Microsoft Online Services Sign-In Assistant for IT Professionals RTW 다운로드 페이지에서 **다운로드**를 선택하고 **원하는 다운로드 선택**에서 **en\msoidcli_64.msi**를 선택한 후 **다음**을 선택합니다. 
 
 1. 기본 옵션으로 다운로드 후에 **Microsoft Online Services Sign-in Assistant Setup**을 설치합니다.
 
@@ -457,23 +457,23 @@ Windows 서버 관리자 자격 증명
    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
    Install-Module MSOnline -Force
    ```
-1. **관리자:**에서** Windows PowerShell** 창은 **Adatum Lab** Azure AD 테넌트에 인증하기 위해 다음을 실행합니다:
+1. **관리자:**에서**Windows PowerShell** 창은 **Adatum Lab** Azure AD 테넌트에 인증하기 위해 다음을 실행합니다:
 
    ```powershell
    Connect-MsolService
    ```
 
-1. 인증하라는 메시지가 표시되면 **az30410-aaduser1(예 : az30410-aaduser1@hahaysh.onmicrosoft.com)** 사용자 계정의  자격 증명을 제공합니다.
+1. 인증하라는 메시지가 표시되면 **az30410-aaduser1**(예 : az30410-aaduser1@hahaysh.onmicrosoft.com) 사용자 계정의  자격 증명을 제공합니다.
 
-1. **관리자:**에서** Windows PowerShell** 창은 다음을 실행하여 Azure AD Connect 동기화를 사용하지 않도록 설정합니다:
+1. **관리자:**에서**Windows PowerShell** 창은 다음을 실행하여 Azure AD Connect 동기화를 사용하지 않도록 설정합니다:
 
    ```powershell
    Set-MsolDirSyncEnabled -EnableDirSync $false -Force
    ```
 
-1. 랩 컴퓨터에서 Azure Portal을 표시하는 브라우저 창에서 Azure Active Directory에서 라이선스, 모든제품, **Azure Active Directory Premium P2 | 허가된 사용자** 블레이드로 이동하여 이 랩에서 라이선스를 할당한 사용자 계정을 선택하고 **라이선스 제거**를 선택하고 확인하라는 메시지가 표시되면 **확인**을 선택합니다.
+1. 랩 컴퓨터에서 Azure Portal을 표시하는 브라우저 창에서 Azure Active Directory에서 라이선스, 모든제품, **Azure Active Directory Premium P2 - 허가된 사용자** 블레이드로 이동하여 이 랩에서 라이선스를 할당한 사용자 계정을 선택하고 **라이선스 제거**를 선택하고 확인하라는 메시지가 표시되면 **확인**을 선택합니다.
 
-1. Azure Portal에서 Azure Active Directory에서 **사용자 | 모든 사용자(미리 보기)** 블레이드로 이동하여 이 랩에서 만든 모든 사용자 계정에 **원본** 열에 **Azure Active Directory** 항목이 있는지 확인합니다. 
+1. Azure Portal에서 Azure Active Directory에서 **사용자 - 모든 사용자(미리 보기)** 블레이드로 이동하여 이 랩에서 만든 모든 사용자 계정에 **원본** 열에 **Azure Active Directory** 항목이 있는지 확인합니다. 
 
 1. **사용자 | 모든 사용자(미리 보기)** 블레이드에서 이 랩에서 만든 각 사용자 계정을 선택하고 도구 모음에서 **삭제**를 선택합니다. 
 
